@@ -1,8 +1,8 @@
 package com.farsight.compat;
 
 import com.farsight.FarsightClientChunkManager;
-import me.jellysquid.mods.sodium.client.render.chunk.map.ChunkStatus;
-import me.jellysquid.mods.sodium.client.render.chunk.map.ChunkTrackerHolder;
+import org.embeddedt.embeddium.impl.render.chunk.map.ChunkStatus;
+import org.embeddedt.embeddium.impl.render.chunk.map.ChunkTrackerHolder;
 
 public class SodiumCompat
 {
