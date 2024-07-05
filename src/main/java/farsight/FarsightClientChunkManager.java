@@ -106,7 +106,7 @@ public class FarsightClientChunkManager extends ClientChunkCache
     @Override
     public void drop(final ChunkPos pos)
     {
-        final LevelChunk chunk = chunks.remove(pos);
+        final LevelChunk chunk = chunks.remove(pos.toLong());
         if (chunk == null)
         {
             return;
