@@ -45,7 +45,7 @@ public class FarsightMod
             NeoForge.EVENT_BUS.post(new ChunkEvent.Load(levelChunk, false));
         });
 
-        if ((FMLLoader.getLoadingModList().getModFileById("embeddium") != null) || (FMLLoader.getLoadingModList().getModFileById("rubidium") != null) || (
+        if ((FMLLoader.getLoadingModList().getModFileById("rubidium") != null) || (
           FMLLoader.getLoadingModList().getModFileById("sodium") != null))
         {
             SodiumCompat.init();

@@ -97,7 +97,7 @@ jarJar.enable()
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "curse.maven:cupboard-326652:5477519"
-    implementation "curse.maven:embeddium-908741:5503381"
+    implementation "curse.maven:embeddium-908741:5521849"
     compileOnly "me.jellysquid.mods:sodium-fabric-0.5.11+mc1.21"
     implementation 'org.jctools:jctools-core:4.0.1'
     jarJar(group:'org.jctools',name:'jctools-core', version:'[4.0.1,)')
