@@ -50,7 +50,7 @@ public class FarsightMod
             net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.level.ChunkEvent.Load(levelChunk, false));
         });
 
-        if ((FMLLoader.getLoadingModList().getModFileById("embeddium") != null) || (FMLLoader.getLoadingModList().getModFileById("rubidium") != null) || (
+        if ((FMLLoader.getLoadingModList().getModFileById("rubidium") != null) || (
           FMLLoader.getLoadingModList().getModFileById("sodium") != null))
         {
             SodiumCompat.init();
