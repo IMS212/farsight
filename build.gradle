@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.142'
+    id 'net.neoforged.gradle.userdev' version '7.0.161'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -38,7 +38,6 @@ runs {
         // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
         systemProperty 'forge.logging.console.level', 'debug'
 
-        systemProperty 'mixin.debug', 'true'
         systemProperty 'mixin.debug.export', 'true'
 
         modSource project.sourceSets.main
@@ -88,6 +87,18 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 configurations {
@@ -97,8 +108,8 @@ jarJar.enable()
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "curse.maven:cupboard-326652:5477519"
-    implementation "curse.maven:embeddium-908741:5521849"
-    compileOnly "me.jellysquid.mods:sodium-fabric-0.5.11+mc1.21"
+    compileOnly "curse.maven:embeddium-908741:5521849"
+    implementation "maven.modrinth:sodium:rcNehRIZ"
     implementation 'org.jctools:jctools-core:4.0.1'
     jarJar(group:'org.jctools',name:'jctools-core', version:'[4.0.1,)')
 }

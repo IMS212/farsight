@@ -1,6 +1,7 @@
 package com.farsight;
 
 import com.cupboard.config.CupboardConfig;
+import com.farsight.compat.EmbeddiumCompat;
 import com.farsight.compat.SodiumCompat;
 import com.farsight.config.CommonConfiguration;
 import net.neoforged.bus.api.IEventBus;
@@ -46,7 +47,12 @@ public class FarsightMod
         });
 
         if ((FMLLoader.getLoadingModList().getModFileById("rubidium") != null) || (
-          FMLLoader.getLoadingModList().getModFileById("sodium") != null))
+          FMLLoader.getLoadingModList().getModFileById("embeddium") != null))
+        {
+            EmbeddiumCompat.init();
+        }
+
+        if (FMLLoader.getLoadingModList().getModFileById("sodium") != null)
         {
             SodiumCompat.init();
         }
